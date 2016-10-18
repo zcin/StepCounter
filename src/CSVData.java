@@ -1,10 +1,45 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class CSVData {
 	private double[][] data;
 	private String[] columnNames;
+	private String filePathToCSV;
+	private int numRows;
 
-	public CSVData() {
+	public CSVData(String[] lines, String[] columnNames, int startRow) {
+		// number of data points
+		int n = lines.length - startRow;
+		this.numRows = n;
+		int numColumns = columnNames.length;
+		// create storage for column names
+		this.columnNames = columnNames;
+		// create storage for data
+		this.data = new double[n][numColumns];
+		for (int i = 0; i < lines.length - startRow; i++) {
+			String line = lines[startRow + i];
+			String[] coords = line.split(",");
+			for (int j = 0; j < numColumns; j++) {
+				if (coords[j].endsWith("#"))
+					coords[j] = coords[j].substring(0, coords[j].length() - 1);
+				double val = Double.parseDouble(coords[j]);
+				data[i][j] = val;
+			}
+		}
+	}
 
+	private static String readFileAsString(String filepath) {
+		StringBuilder output = new StringBuilder();
+		try (Scanner scanner = new Scanner(new File(filepath))) {
+			while (scanner.hasNext()) {
+				String line = scanner.nextLine();
+				output.append(line + System.getProperty("line.separator"));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return output.toString();
 	}
 
 	/***
@@ -20,8 +55,15 @@ public class CSVData {
 	 *            the names/descriptions of each column of values
 	 * @return CSVData
 	 */
-	public static CSVData readCSVFile(String filename, int numLinesIgnore, String[] columnHeaders) {
-		return new CSVData();
+	public static CSVData readCSVFile(String filepath, int numLinesIgnore, String[] columnNames) {
+		String dataString = readFileAsString(filepath);
+		int i1 = 0;
+		for(int newLine = 0; newLine < numLinesIgnore; i1++)
+			if(dataString.charAt(i1) == '\n') newLine++;
+		dataString = dataString.substring(i1);
+		String[] lines = dataString.split("\n");
+		
+		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
 
 	/***
@@ -29,14 +71,22 @@ public class CSVData {
 	 * uses the first row as the column names. all other data is stored in 2D
 	 * array
 	 * 
-	 * @param filename
-	 *            name of the CSV file
+	 * @param filepath to the CSV file
 	 * @param numLinesIgnore
 	 *            the number of lines to ignore from the top of the file
 	 * @return CSVDATA
 	 */
-	public static CSVData readCSVFile(String filename, int numLinesIgnore) {
-		return new CSVData();
+	public static CSVData readCSVFile(String filepath, int numLinesIgnore) {
+		String dataString = readFileAsString(filepath);
+		int i1 = 0, i2;
+		for(int newLine = 0; newLine < numLinesIgnore; i1++)
+			if(dataString.charAt(i1) == '\n') newLine++;
+		for(i2 = i1; dataString.charAt(i2) != '\n'; i2++);
+		String[] columnNames = dataString.substring(i1, i2).split(",");
+		dataString = dataString.substring(i2);
+		String[] lines = dataString.split("\n");
+		
+		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
 
 	/***
