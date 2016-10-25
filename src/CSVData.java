@@ -1,5 +1,8 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CSVData {
@@ -88,6 +91,10 @@ public class CSVData {
 		
 		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
+	
+	public double[][] getData() {
+		return this.data;
+	}
 
 	/***
 	 * returns the individual row out of the array
@@ -96,9 +103,8 @@ public class CSVData {
 	 *            index of the row
 	 * @return the array of the rows
 	 */
-
 	public double[] getRow(int rowIndex) {
-		return null;
+		return data[rowIndex];
 	}
 
 	/***
@@ -108,9 +114,12 @@ public class CSVData {
 	 *            index of the col
 	 * @return returns the array of the columns
 	 */
-
 	public double[] getColumn(int columnIndex) {
-		return null;
+		double[] column = new double[data.length];
+		for (int j = 0; j < data.length; j++)
+			column[j] = data[j][columnIndex];
+
+		return column;
 	}
 
 	/***
@@ -120,9 +129,9 @@ public class CSVData {
 	 *            the name of the col
 	 * @return returns the name of the columns
 	 */
-
 	public double[] getColumn(String name) {
-		return null;
+		int columnIndex = Arrays.asList(columnNames).indexOf(name);
+		return getColumn(columnIndex);
 	}
 
 	/***
@@ -134,9 +143,12 @@ public class CSVData {
 	 *            the index you are ending at
 	 * @return returns the array of the rows
 	 */
-
 	public double[][] getRows(int startIndex, int endIndex) {
-		return null;
+		double[][] rows = new double[endIndex - startIndex + 1][data[0].length];
+		
+		for (int i = startIndex; i <= endIndex; i++)
+			rows[i] = getRow(i);
+		return rows;
 	}
 
 	/***
@@ -146,9 +158,14 @@ public class CSVData {
 	 *            the array of the indexes of the row
 	 * @return returns the array of the rows
 	 */
-
 	public double[][] getRows(int[] rowIndexes) {
-		return null;
+		double[][] rows = new double[rowIndexes.length][data[0].length];
+
+		sort.randomized_quick_sort(rowIndexes, 0, rowIndexes.length);
+		
+		for (int i = 0; i < rowIndexes.length; i++) 
+			rows[i] = getRow(rowIndexes[i]);
+		return rows;
 	}
 
 	/***
@@ -160,7 +177,15 @@ public class CSVData {
 	 */
 
 	public double[][] getColumns(int[] columnIndexes) {
-		return null;
+		double[][] cols = new double[data.length][columnIndexes.length];
+
+		sort.randomized_quick_sort(columnIndexes, 0, columnIndexes.length);
+		for (int i = 0; i <= columnIndexes.length; i++) {
+			double[] col = getColumn(columnIndexes[i]);
+			for(int j = 0; j < col.length; j++)
+				cols[j][i] = col[j];
+		}
+		return cols;
 	}
 
 	/***
@@ -173,7 +198,13 @@ public class CSVData {
 	 * @return returns the array of the columns
 	 */
 	public double[][] getColumns(int startIndex, int endIndex) {
-		return null;
+		double[][] cols = new double[data.length][endIndex - startIndex + 1];
+		for (int i = startIndex; i <= endIndex; i++) {
+			double[] col = getColumn(i);
+			for(int j = 0; j < col.length; j++)
+				cols[j][i-startIndex] = col[j];
+		}
+		return cols;
 	}
 
 	/***
@@ -183,9 +214,11 @@ public class CSVData {
 	 *            the name of the column
 	 * @return returns the array of the columns
 	 */
-
-	public double[][] getColumns(String colNames) {
-		return null;
+	public double[][] getColumns(String[] colNames) {
+		int[] colIndexes = new int[colNames.length];
+		for(int i = 0; i < colNames.length; i++)
+			colIndexes[i] = Arrays.asList(columnNames).indexOf(colNames[i]);
+		return getColumns(colIndexes);
 	}
 
 	/***
@@ -199,7 +232,7 @@ public class CSVData {
 	 *            the value you want to set the element to
 	 */
 	public void setValue(int rowIndex, int colIndex, double newValue) {
-
+		data[rowIndex][colIndex] = newValue;
 	}
 
 	/***
@@ -208,9 +241,9 @@ public class CSVData {
 	 * @param values
 	 *            the array of the row values
 	 */
-
-	public void setRow(double[] values) {
-
+	public void setRow(int row, double[] values) {
+		for(int i = 0; i < values.length; i++)
+			data[row][i] = values[i];
 	}
 
 	/***
@@ -219,9 +252,9 @@ public class CSVData {
 	 * @param values
 	 *            the array of the col values
 	 */
-
-	public void setColumn(double[] values) {
-
+	public void setColumn(int column, double[] values) {
+		for(int i = 0; i < values.length; i++)
+			data[i][column] = values[i];
 	}
 
 	/***
@@ -229,9 +262,8 @@ public class CSVData {
 	 * 
 	 * @return returns the array of the column names
 	 */
-
 	public String[] getColumnTitles() {
-		return null;
+		return columnNames;
 	}
 
 	/***
@@ -241,6 +273,14 @@ public class CSVData {
 	 *            the name of the file
 	 */
 	public void saveToFile(String filename) {
+		File outFile = new File(filename);
 
+		try (BufferedWriter write = new BufferedWriter(new FileWriter(outFile))) {
+			write.write(data.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+	
+	
 }
