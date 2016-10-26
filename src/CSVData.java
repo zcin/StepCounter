@@ -12,13 +12,10 @@ public class CSVData {
 	private int numRows;
 
 	public CSVData(String[] lines, String[] columnNames, int startRow) {
-		// number of data points
 		int n = lines.length - startRow;
 		this.numRows = n;
 		int numColumns = columnNames.length;
-		// create storage for column names
 		this.columnNames = columnNames;
-		// create storage for data
 		this.data = new double[n][numColumns];
 		for (int i = 0; i < lines.length - startRow; i++) {
 			String line = lines[startRow + i];
