@@ -12,15 +12,13 @@ public class Plot {
 		String filepath = "/Users/rohanrodrigues/Documents/GyroTest2out.csv";
 		CSVData data = CSVData.readCSVFile(filepath, 5);
 		
-		double[] gyroX = data.getColumn("");
-		double[] gyroY = data.getColumn("");
-		double[] gyroZ = data.getColumn("");
+		double[] accelerometerX = data.getColumn("accelerometer-x");
+		double[] accelerometerY = data.getColumn("accelerometer-y");
+		double[] accelerometerZ = data.getColumn("accelerometer-z");
+		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(data.getColumns(new String[] {"accelerometer-x", "accelerometer-y", "accelerometer-z"}));;
 		
 		Plot2DPanel plot = new Plot2DPanel();
-		// add a line plot to the PlotPanel
-		plot.addLinePlot("Gyro-x", gyroX);
-		plot.addLinePlot("Gyro-y", gyroY);
-		plot.addLinePlot("Gyro-z", gyroZ);
+		plot.addLinePlot("Accel", accMagnitudes);
 		
 		//plot.addLinePlot("Output of Running Average", result);
 
