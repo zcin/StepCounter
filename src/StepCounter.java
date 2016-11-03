@@ -34,6 +34,27 @@ public class StepCounter {
 		return peaks;
 	}
 	
+	public void resetThreshold(){
+		int[] peaks = getPeaks();
+		double currentThreshold = calculateStandardDeviation(magnitudes, calculateMean(magnitudes)) + calculateMean(magnitudes);
+		double newThreshold = currentThreshold;
+		do{
+			currentThreshold = newThreshold;
+			newThreshold = calculateThreshold((0.2)*getStandardDeviation(), currentThreshold, peaks);
+		} while(currentThreshold != newThreshold);
+		THRESHOLD = newThreshold;
+	}
+	
+	public double calculateThreshold(double nearMissThreshold, double currentThreshold, int[] peaks){
+		int nearMisses = 0;
+		for(int i = 0; i < peaks.length; i++){
+			if(peaks[i] == 1 && magnitudes[i] < currentThreshold)
+				if(currentThreshold - magnitudes[i] <= nearMissThreshold) nearMisses++;
+		}
+		if(nearMisses > 3) return currentThreshold - nearMissThreshold;
+		return currentThreshold;
+	}
+	
 	public static double calculateMagnitude(double x, double y, double z){
 		return Math.sqrt(x*x + y*y + z*z);
 	}
