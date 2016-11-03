@@ -157,8 +157,6 @@ public class CSVData {
 	 */
 	public double[][] getRows(int[] rowIndexes) {
 		double[][] rows = new double[rowIndexes.length][data[0].length];
-
-		sort.randomized_quick_sort(rowIndexes, 0, rowIndexes.length);
 		
 		for (int i = 0; i < rowIndexes.length; i++) 
 			rows[i] = getRow(rowIndexes[i]);
@@ -176,7 +174,6 @@ public class CSVData {
 	public double[][] getColumns(int[] columnIndexes) {
 		double[][] cols = new double[data.length][columnIndexes.length];
 
-		sort.randomized_quick_sort(columnIndexes, 0, columnIndexes.length);
 		for (int i = 0; i <= columnIndexes.length; i++) {
 			double[] col = getColumn(columnIndexes[i]);
 			for(int j = 0; j < col.length; j++)
