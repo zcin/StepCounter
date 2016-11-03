@@ -3,11 +3,21 @@ import java.util.ArrayList;
 public class StepCounter {
 
 	private static double THRESHOLD;
+	private double[] magnitudes;
+	private double[] times;
+	private double[][] sensorData;
+	
 	private static double[] peakTimes;
 	private static double[] peakMagnitudes;
 
-	public static int countSteps(double[] times, double[][] sensorData){
-		double[] magnitudes = calculateMagnitudesFor(sensorData);
+	public StepCounter(double[] times, double[][] sensorData){
+		this.times = times;
+		this.sensorData = sensorData;
+		magnitudes = calculateMagnitudesFor(sensorData);
+		THRESHOLD = calculateStandardDeviation(magnitudes, calculateMean(magnitudes)) + calculateMean(magnitudes);
+	}
+	
+	public int countSteps(){
 		THRESHOLD = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 		int stepCount = 0;
 		for(int i = 1; i < times.length; i++)
