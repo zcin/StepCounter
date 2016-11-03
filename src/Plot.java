@@ -5,29 +5,36 @@ import org.math.plot.Plot2DPanel;
 import org.math.plot.Plot3DPanel;
 
 public class Plot {
+	
+	static String filepath = "/Users/rohanrodrigues/Documents/GyroTest2out.csv";
+	static CSVData data = CSVData.readCSVFile(filepath, 5);
+	static double[][] accelerometerData = data
+			.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
+	
 	public static void main(String[] args) {
 		double rate = 5;
 		int size = 100;
 		
-		String filepath = "/Users/rohanrodrigues/Documents/GyroTest2out.csv";
-		CSVData data = CSVData.readCSVFile(filepath, 5);
-		
 		double[] accelerometerX = data.getColumn("accelerometer-x");
 		double[] accelerometerY = data.getColumn("accelerometer-y");
 		double[] accelerometerZ = data.getColumn("accelerometer-z");
-		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(data.getColumns(new String[] {"accelerometer-x", "accelerometer-y", "accelerometer-z"}));;
+		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(accelerometerData);
 		
 		Plot2DPanel plot = new Plot2DPanel();
 		plot.addLinePlot("Accel", accMagnitudes);
 		
-		//plot.addLinePlot("Output of Running Average", result);
-
-		// put the PlotPanel in a JFrame, as a JPanel
-		JFrame frame = new JFrame("Smoothing result");
+		JFrame frame = new JFrame("Accelerometer Data");
 		frame.setSize(800, 600);
 		frame.setContentPane(plot);
 		frame.setVisible(true);
 	}
+	
+	public static void pedometer(){
+		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData);
+		System.out.println("steps1:" + stepcounter.countSteps());
+	}
+	
+	
 	
 	/***
 	 * Returns a new array whose elements are a running average of adjacent elements of array
