@@ -18,11 +18,13 @@ public class StepCounter {
 	}
 	
 	public int countSteps(){
-		THRESHOLD = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 		int stepCount = 0;
-		for(int i = 1; i < times.length; i++)
-			if(magnitudes[i] > magnitudes[i-1] && magnitudes[i] > magnitudes[i+1])
-				if(magnitudes[i] > THRESHOLD) stepCount++;
+		boolean ifCrossed = false;
+		for(int i = 1; i < magnitudes.length-1; i++)
+			if(magnitudes[i-1] < THRESHOLD && magnitudes[i] > THRESHOLD) {
+				if(ifCrossed) stepCount++;
+				else ifCrossed = true;
+			}
 		return stepCount;
 	}
 	
