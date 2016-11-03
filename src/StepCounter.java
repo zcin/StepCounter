@@ -14,7 +14,7 @@ public class StepCounter {
 		this.times = times;
 		this.sensorData = sensorData;
 		magnitudes = calculateMagnitudesFor(sensorData);
-		THRESHOLD = calculateStandardDeviation(magnitudes, calculateMean(magnitudes)) + calculateMean(magnitudes);
+		resetThreshold();
 	}
 	
 	public int countSteps(){
@@ -32,6 +32,10 @@ public class StepCounter {
 			if(magnitudes[i] > magnitudes[i-1] && magnitudes[i] > magnitudes[i+1])
 				peaks[i] = 1;
 		return peaks;
+	}
+	
+	public double getThreshold(){
+		return THRESHOLD;
 	}
 	
 	public void resetThreshold(){
@@ -81,5 +85,9 @@ public class StepCounter {
 		double sum = 0;
 		for(int i = 0; i < arr.length; i++) sum+=arr[i];
 		return sum/(double)(arr.length);
+	}
+	
+	public double getMean(){
+		return calculateMean(magnitudes);
 	}
 }
