@@ -59,14 +59,14 @@ public class StepCounter {
 		return Math.sqrt(x*x + y*y + z*z);
 	}
 	
-	private static double[] calculateMagnitudesFor(double[][] sensorData){
+	public static double[] calculateMagnitudesFor(double[][] sensorData){
 		double[] magnitudes = new double[sensorData.length];
 		for(int i = 0; i < sensorData.length; i++)
 			magnitudes[i] = calculateMagnitude(sensorData[i][0], sensorData[i][1], sensorData[i][2]);
 		return magnitudes;
 	}
 	
-	private static double calculateStandardDeviation(double[] arr, double mean){
+	public static double calculateStandardDeviation(double[] arr, double mean){
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++)
 			sum+=(arr[i]-mean)*(arr[i]-mean);
@@ -77,7 +77,7 @@ public class StepCounter {
 		return calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 	}
 	
-	private static double calculateMean(double[] arr){
+	public static double calculateMean(double[] arr){
 		double sum = 0;
 		for(int i = 0; i < arr.length; i++) sum+=arr[i];
 		return sum/(double)(arr.length);
