@@ -26,6 +26,14 @@ public class StepCounter {
 		return stepCount;
 	}
 	
+	public int[] getPeaks(){
+		int[] peaks = new int[times.length];
+		for(int i = 1; i < times.length-1; i++)
+			if(magnitudes[i] > magnitudes[i-1] && magnitudes[i] > magnitudes[i+1])
+				peaks[i] = 1;
+		return peaks;
+	}
+	
 	public static double calculateMagnitude(double x, double y, double z){
 		return Math.sqrt(x*x + y*y + z*z);
 	}
