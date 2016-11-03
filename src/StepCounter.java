@@ -52,6 +52,10 @@ public class StepCounter {
 		return Math.sqrt(sum/(arr.length-1));
 	}
 	
+	public double getStandardDeviation(){
+		return calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
+	}
+	
 	private static double calculateMean(double[] arr){
 		double sum = 0;
 		for(int i = 0; i < arr.length; i++) sum+=arr[i];
