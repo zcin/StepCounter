@@ -6,7 +6,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "slow_walk2.txt";
+	static String filepath = "walking_up_stairs.txt";
 	static CSVData data = CSVData.readCSVFile(filepath, 5);
 	static double[][] accelerometerData = data
 			.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
@@ -20,20 +20,20 @@ public class Plot {
 		double[] accelerometerZ = data.getColumn("accelerometer-z");
 		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(accelerometerData);
 		
+		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData, 30);
+		double threshold = stepcounter.getThreshold();
+		double mean = stepcounter.getMean();
+		System.out.println("steps:" + stepcounter.countSteps());
+		
 		Plot2DPanel plot = new Plot2DPanel();
 		plot.addLinePlot("Accel", accMagnitudes);
+		plot.addLinePlot("threshold", toArray(threshold, accMagnitudes.length));
+		plot.addLinePlot("mean", toArray(mean, accMagnitudes.length));
 		
 		JFrame frame = new JFrame("Accelerometer Data");
 		frame.setSize(800, 600);
 		frame.setContentPane(plot);
 		frame.setVisible(true);
-		
-		pedometer();
-	}
-	
-	public static void pedometer(){
-		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData);
-		System.out.println("steps1:" + stepcounter.countSteps());
 	}
 	
 	public static double[] toArray(double d, int size){
