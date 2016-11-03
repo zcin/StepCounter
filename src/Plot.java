@@ -6,7 +6,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "/Users/rohanrodrigues/Documents/GyroTest2out.csv";
+	static String filepath = "slow_walk2.txt";
 	static CSVData data = CSVData.readCSVFile(filepath, 5);
 	static double[][] accelerometerData = data
 			.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
@@ -27,11 +27,19 @@ public class Plot {
 		frame.setSize(800, 600);
 		frame.setContentPane(plot);
 		frame.setVisible(true);
+		
+		pedometer();
 	}
 	
 	public static void pedometer(){
 		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData);
 		System.out.println("steps1:" + stepcounter.countSteps());
+	}
+	
+	public static double[] toArray(double d, int size){
+		double[] arr = new double[size];
+		for(int i = 0; i < size; i++) arr[i] = d;
+		return arr;
 	}
 	
 	
