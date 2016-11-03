@@ -127,7 +127,7 @@ public class CSVData {
 	 * @return returns the name of the columns
 	 */
 	public double[] getColumn(String name) {
-		int columnIndex = Arrays.asList(columnNames).indexOf(name);
+		int columnIndex = indexOf(columnNames, name);
 		return getColumn(columnIndex);
 	}
 
@@ -174,7 +174,7 @@ public class CSVData {
 	public double[][] getColumns(int[] columnIndexes) {
 		double[][] cols = new double[data.length][columnIndexes.length];
 
-		for (int i = 0; i <= columnIndexes.length; i++) {
+		for (int i = 0; i < columnIndexes.length; i++) {
 			double[] col = getColumn(columnIndexes[i]);
 			for(int j = 0; j < col.length; j++)
 				cols[j][i] = col[j];
@@ -211,7 +211,7 @@ public class CSVData {
 	public double[][] getColumns(String[] colNames) {
 		int[] colIndexes = new int[colNames.length];
 		for(int i = 0; i < colNames.length; i++)
-			colIndexes[i] = Arrays.asList(columnNames).indexOf(colNames[i]);
+			colIndexes[i] = indexOf(columnNames, colNames[i]);
 		return getColumns(colIndexes);
 	}
 
@@ -258,6 +258,12 @@ public class CSVData {
 	 */
 	public String[] getColumnTitles() {
 		return columnNames;
+	}
+	
+	public int indexOf(String[] arr, String n){
+		for(int i = 0; i < arr.length; i++)
+			if(arr[i].equals(n)) return i;
+		return -1;
 	}
 
 	/***
