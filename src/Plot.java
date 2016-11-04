@@ -8,8 +8,7 @@ public class Plot {
 	
 	static String filepath = "slow_walk_K.txt";
 	static CSVData data = CSVData.readCSVFile(filepath, 5);
-	static double[][] accelerometerData = data
-			.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
+	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
 	
 	public static void main(String[] args) {
 		double rate = 5;
@@ -46,7 +45,6 @@ public class Plot {
 	}
 	
 	
-	
 	/***
 	 * Returns a new array whose elements are a running average of adjacent elements of array
 	 * @param array the sample signal values (to be averaged)
@@ -73,7 +71,13 @@ public class Plot {
 	 * @return double[] an array, each of whose elements is the average of n adjacent values from array
 	 */
 	public static double[] generalRunningAverage(double[] array, int n) {
-		return null;
+		double[] output = new double[array.length-n+1];
+		for(int i = 0; i < array.length-n+1; i++){
+			for(int j = 0; j < n; j++)
+				output[i] += array[i+j];
+			output[i]/=n;
+		}	
+		return output;
 	}
 	
 	/***
