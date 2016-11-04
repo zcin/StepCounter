@@ -1,23 +1,36 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StepCounter {
 
-	private static double THRESHOLD;
+	private double THRESHOLD;
 	private double[] magnitudes;
 	private double[] times;
 	private double[][] sensorData;
+	private double[] peaksAndTroughs;
+	private int numberSteps;
 	
 	private static double[] peakTimes;
 	private static double[] peakMagnitudes;
 
-	public StepCounter(double[] times, double[][] sensorData){
+	public StepCounter(double[] times, double[][] sensorData, int numberSteps){
 		this.times = times;
 		this.sensorData = sensorData;
+		this.numberSteps = numberSteps;
 		magnitudes = calculateMagnitudesFor(sensorData);
+		peaksAndTroughs = getPeaksAndTroughs();
 		resetThreshold();
 	}
 	
-	public int countSteps(){
+	public int countSteps1(){
+		int stepsCount = 0;
+		for(int i = 0; i < peaksAndTroughs.length; i++){
+			if(peaksAndTroughs[i] > (1.0/4.0)*getStandardDeviation()*getStandardDeviation()) stepsCount++;
+		}
+		return stepsCount;
+	}
+	
+	public int countSteps2(){
 		int stepCount = 0;
 		boolean ifCrossed = false;
 		for(int i = 1; i < magnitudes.length-1; i++)
@@ -28,36 +41,48 @@ public class StepCounter {
 		return stepCount;
 	}
 	
-	public int[] getPeaks(){
-		int[] peaks = new int[times.length];
+	public double[] getPeaksAndTroughs(){
+		double[] arr = new double[times.length];
 		for(int i = 1; i < times.length-1; i++)
 			if(magnitudes[i] > magnitudes[i-1] && magnitudes[i] > magnitudes[i+1])
-				peaks[i] = 1;
-		return peaks;
+				arr[i] = magnitudes[i]-getPreviousTrough(i);
+		System.out.println(Arrays.toString(arr));
+		return arr;
+	}
+	
+	public double getPreviousTrough(int index){
+		for(int i = index; i > 0; i--)
+			if(magnitudes[i] < magnitudes[i-1] && magnitudes[i] < magnitudes[i+1])
+				return magnitudes[i];
+		return -1;
 	}
 	
 	public double getThreshold(){
 		return THRESHOLD;
 	}
 	
+	public double getOriginalThreshold(){
+		return calculateStandardDeviation(magnitudes, calculateMean(magnitudes)) + calculateMean(magnitudes);
+	}
+	
 	public void resetThreshold(){
-		int[] peaks = getPeaks();
 		double currentThreshold = calculateStandardDeviation(magnitudes, calculateMean(magnitudes)) + calculateMean(magnitudes);
 		double newThreshold = currentThreshold;
 		do{
 			currentThreshold = newThreshold;
-			newThreshold = calculateThreshold((0.2)*getStandardDeviation(), currentThreshold, peaks);
+			newThreshold = calculateThreshold((0.3)*getStandardDeviation(), currentThreshold);
 		} while(currentThreshold != newThreshold);
 		THRESHOLD = newThreshold;
 	}
 	
-	public double calculateThreshold(double nearMissThreshold, double currentThreshold, int[] peaks){
+	public double calculateThreshold(double nearMissThreshold, double currentThreshold){
 		int nearMisses = 0;
-		for(int i = 0; i < peaks.length; i++){
-			if(peaks[i] == 1 && magnitudes[i] < currentThreshold)
-				if(currentThreshold - magnitudes[i] <= nearMissThreshold) nearMisses++;
+		for(int i = 0; i < peaksAndTroughs.length; i++){
+			if(peaksAndTroughs[i] != 0.0 && magnitudes[i] < currentThreshold)
+				if(currentThreshold - magnitudes[i] <= nearMissThreshold) 
+					if(peaksAndTroughs[i] >= 3.0) nearMisses++;
 		}
-		if(nearMisses > 3) return currentThreshold - nearMissThreshold;
+		if(nearMisses > (1.0/10.0)*(numberSteps)) return currentThreshold - nearMissThreshold;
 		return currentThreshold;
 	}
 	
