@@ -27,7 +27,7 @@ public class StepCounter {
 		this.magnitudes = calculateMagnitudesFor(sensorData);
 		this.STANDARD_DEVIATION = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 		this.STARTING_THRESHOLD = STANDARD_DEVIATION + calculateMean(magnitudes);
-		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = STANDARD_DEVIATION;
+		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.5*STANDARD_DEVIATION;
 		this.NEAR_MISS_COUNT_THRESHOLD = (int) ((1.0 / 10.0) * ((double) numberSteps));
 		this.NEAR_MISS_THRESHOLD = (0.4) * STANDARD_DEVIATION;
 
@@ -44,6 +44,16 @@ public class StepCounter {
 				if(ifCrossed) stepCount++;
 				else ifCrossed = true;
 			}
+		return stepCount;
+	}
+	
+	public int countStepsByPeakTroughThreshold() {
+		int stepCount = 0;
+		boolean ifCrossed = false;
+		boolean differenceBigEnough = false;
+		for (int i = 1; i < magnitudes.length - 1; i++)
+			if (magnitudes[i] > PEAK_HEIGHT_THRESHOLD && peaksAndTroughs[i] > PEAK_TROUGH_DIFFERENCE_THRESHOLD) 
+				stepCount++;
 		return stepCount;
 	}
 
@@ -87,7 +97,7 @@ public class StepCounter {
 				if (currentThreshold - magnitudes[i] <= nearMissThreshold)
 					nearMisses++;
 		}
-		if (nearMisses > NEAR_MISS_COUNT_THRESHOLD)
+		if (nearMisses >= NEAR_MISS_COUNT_THRESHOLD)
 			return currentThreshold - nearMissThreshold;
 		return currentThreshold;
 	}
