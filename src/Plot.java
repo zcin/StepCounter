@@ -6,7 +6,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "slow_walk_K.txt";
+	static String filepath = "data/slow_walk.txt";
 	static CSVData data = CSVData.readCSVFile(filepath, 5);
 	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
 	
@@ -52,7 +52,13 @@ public class Plot {
 	 * pair of averaged elements from array
 	 */
 	public static double[] runningAverage(double[] array) {
-		return null;
+		double[] output = new double[array.length-1];
+		for(int i = 0; i < array.length-1; i++){
+			for(int j = 0; j < 2; j++)
+				output[i] += array[i+j];
+			output[i] /= 2;
+		}	
+		return output;
 	}
 
 	/***
@@ -62,7 +68,13 @@ public class Plot {
 	 * averaged elements from array
 	 */
 	public static double[] runningAverageOfThree(double[] array) {
-		return null;
+		double[] output = new double[array.length-2];
+		for(int i = 0; i < array.length-2; i++){
+			for(int j = 0; j < 3; j++)
+				output[i] += array[i+j];
+			output[i] /= 3;
+		}	
+		return output;
 	}
 	
 	/***
