@@ -27,7 +27,7 @@ public class StepCounter {
 		this.magnitudes = calculateMagnitudesFor(sensorData);
 		this.STANDARD_DEVIATION = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 		this.STARTING_THRESHOLD = STANDARD_DEVIATION + calculateMean(magnitudes);
-		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.5*STANDARD_DEVIATION;
+		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.7*STANDARD_DEVIATION+2;
 		this.NEAR_MISS_COUNT_THRESHOLD = (int) ((1.0 / 10.0) * ((double) numberSteps));
 		this.NEAR_MISS_THRESHOLD = (0.4) * STANDARD_DEVIATION;
 
