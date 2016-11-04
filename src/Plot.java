@@ -6,7 +6,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "slow_walk.txt";
+	static String filepath = "slow_walk_K.txt";
 	static CSVData data = CSVData.readCSVFile(filepath, 5);
 	static double[][] accelerometerData = data
 			.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
@@ -20,13 +20,12 @@ public class Plot {
 		double[] accelerometerZ = data.getColumn("accelerometer-z");
 		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(accelerometerData);
 		
-		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData, 30);
+		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData, 12);
 		double beginningThreshold = stepcounter.getOriginalThreshold();
 		double threshold = stepcounter.getThreshold();
 		double mean = stepcounter.getMean();
-		System.out.println(threshold);
-		System.out.println("steps1:" + stepcounter.countSteps1());
-		System.out.println("steps2:" + stepcounter.countSteps2());
+		System.out.println("steps:" + stepcounter.countStepsByThresholdCrossings());
+		System.out.println(stepcounter);
 		
 		Plot2DPanel plot = new Plot2DPanel();
 		plot.addLinePlot("Accel", accMagnitudes);
