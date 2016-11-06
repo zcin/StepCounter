@@ -32,9 +32,9 @@ public class CSVIphoneToAndroid {
 			String accelX = columns[10];
 			String accelY = columns[11];
 			String accelZ = columns[12];
-			String gyroX = columns[3];
-			String gyroY = columns[4];
-			String gyroZ = columns[5];
+			String gyroX = columns[4];
+			String gyroY = columns[5];
+			String gyroZ = columns[6];
 			
 			String finalTemp;
 			if (count == 4) {
