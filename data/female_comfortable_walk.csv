@@ -1,8 +1,3 @@
-@ HyperIMU - ianovir - 2016
-@ Date: Fri Nov 04 10:30:39 PDT 2016
-@ Sensors: BMI160_accelerometer - BMI160_gyroscope
-@ SamplingTime: 100ms
-
 time,accelerometer-x,accelerometer-y,accelerometer-z,gyro-x,gyro-y,gyro-z
 1478280639368,0.0,0.0,0.0,0.0,0.0,0.0#
 1478280639473,1.0609937,9.350157,-0.37601808,-0.0628506,-0.26738137,-0.09161274#

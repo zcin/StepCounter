@@ -1,0 +1,32 @@
+- filename: yourtestdatafile1.csv
+- steps: 100
+- phone_model: samsung galaxy s4
+- subject_age: 17
+- subject_gender: M
+- gait: fast-walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: your name (if you were there when data was recorded)
+- date: 6/1/16
+***********************************
+- filename: yourtestdatafile2.csv
+- steps: 102
+- phone_model: samsung galaxy s4
+- subject_age: 15
+- subject_gender: F
+- gait: fast-walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: your name (if you were there when data was recorded)
+- date: 6/2/16
+***********************************
+- filename: yourtestdatafile3.csv
+- steps: 98
+- phone_model: samsung galaxy s4
+- subject_age: 8
+- subject_gender: M
+- gait: fast-walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: your name (if you were there when data was recorded)
+- date: 6/2/16
