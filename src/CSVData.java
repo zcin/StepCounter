@@ -19,6 +19,7 @@ public class CSVData {
 		this.data = new double[n][numColumns];
 		for (int i = 0; i < lines.length - startRow; i++) {
 			String line = lines[startRow + i];
+			System.out.println(line);
 			String[] coords = line.split(",");
 			for (int j = 0; j < numColumns; j++) {
 				if (coords[j].endsWith("#")) {
@@ -28,7 +29,7 @@ public class CSVData {
 				data[i][j] = val;
 			}
 		}
-		//changeTimeStamp();
+		changeTimeStamp();
 	}
 
 	private static String readFileAsString(String filepath) {
@@ -66,7 +67,7 @@ public class CSVData {
 		dataString = dataString.substring(i1);
 		String[] lines = dataString.split("\n");
 		
-		return new CSVData(lines, columnNames, numLinesIgnore+1);
+		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
 
 	/***
@@ -87,10 +88,9 @@ public class CSVData {
 			if(dataString.charAt(i1) == '\n') newLine++;
 		for(i2 = i1; dataString.charAt(i2) != '\n'; i2++);
 		String[] columnNames = dataString.substring(i1, i2).split(",");
-		dataString = dataString.substring(i2);
+		dataString = dataString.substring(i2+1);
 		String[] lines = dataString.split("\n");
-		
-		return new CSVData(lines, columnNames, numLinesIgnore+1);
+		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
 	
 	/***

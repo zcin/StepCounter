@@ -9,7 +9,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "data/male_stairs copy.txt";
+	static String filepath = "data/male_stairs.csv";
 	static CSVData data = CSVData.readCSVFile(filepath, 0); 
 	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" }); 
 	
