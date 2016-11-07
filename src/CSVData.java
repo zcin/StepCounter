@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CSVData {
 	private double[][] data;
 	private String[] columnNames;
-	private String filePathToCSV;
+	private static String filePathToCSV;
 	private int numRows;
 
 	public CSVData(String[] lines, String[] columnNames, int startRow) {
@@ -21,13 +21,14 @@ public class CSVData {
 			String line = lines[startRow + i];
 			String[] coords = line.split(",");
 			for (int j = 0; j < numColumns; j++) {
-				if (coords[j].endsWith("#"))
+				if (coords[j].endsWith("#")) {
 					coords[j] = coords[j].substring(0, coords[j].length() - 1);
+				}
 				double val = Double.parseDouble(coords[j]);
 				data[i][j] = val;
 			}
 		}
-		changeTimeStamp();
+		//changeTimeStamp();
 	}
 
 	private static String readFileAsString(String filepath) {
@@ -57,6 +58,7 @@ public class CSVData {
 	 * @return CSVData
 	 */
 	public static CSVData readCSVFile(String filepath, int numLinesIgnore, String[] columnNames) {
+		filePathToCSV = filepath;
 		String dataString = readFileAsString(filepath);
 		int i1 = 0;
 		for(int newLine = 0; newLine < numLinesIgnore; i1++)
@@ -64,7 +66,7 @@ public class CSVData {
 		dataString = dataString.substring(i1);
 		String[] lines = dataString.split("\n");
 		
-		return new CSVData(lines, columnNames, numLinesIgnore);
+		return new CSVData(lines, columnNames, numLinesIgnore+1);
 	}
 
 	/***
@@ -78,6 +80,7 @@ public class CSVData {
 	 * @return CSVDATA
 	 */
 	public static CSVData readCSVFile(String filepath, int numLinesIgnore) {
+		filePathToCSV = filepath;
 		String dataString = readFileAsString(filepath);
 		int i1 = 0, i2;
 		for(int newLine = 0; newLine < numLinesIgnore; i1++)
@@ -87,7 +90,7 @@ public class CSVData {
 		dataString = dataString.substring(i2);
 		String[] lines = dataString.split("\n");
 		
-		return new CSVData(lines, columnNames, numLinesIgnore);
+		return new CSVData(lines, columnNames, numLinesIgnore+1);
 	}
 	
 	/***
@@ -95,14 +98,17 @@ public class CSVData {
 	 * @param linesToIgnore
 	 */
 	private void changeTimeStamp() {
-		for (int i = data.length - 1; i >= 0; i--) {
-			if (i != 0) {
-				data[i][0] -= data[i-1][0];
-			}
-			else {
-				data[i][0] = 0;
-			}
-			
+		double value = data[0][0];
+
+		data[0][0] = 0;
+		for (int i = 1; i < data.length; i++) {
+			data[i][0] -= value;
+		}
+		
+		try {
+			saveToFile(filePathToCSV);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 	
@@ -286,21 +292,51 @@ public class CSVData {
 			if(arr[i].equals(n)) return i;
 		return -1;
 	}
+	
+	public String Array2DtoString(double[][] arr) {
+		String str = Array1DtoString(columnNames);
+		for (int i = 1; i < arr.length; i++) {
+			str += "\n" + Array1DtoString(arr[i]) + "#";
+		}
+		return str;
+	}
+	
+	public String Array1DtoString(double[] arr) {
+		String str = "" + arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			str += "," + arr[i];
+		}
+		return str;
+	}
+	
+	public String Array1DtoString(String[] arr) {
+		String str = "" + arr[0];
+		for (int i = 1; i < arr.length; i++) {
+			str += "," + arr[i];
+		}
+		return str;
+	}
 
 	/***
 	 * saves the current state of the object back into a CSV
 	 * 
 	 * @param filename
 	 *            the name of the file
+	 * @throws IOException 
 	 */
-	public static void saveToFile(String filename, CSVData data) {
-		File outFile = new File(filename);
-
-		try (BufferedWriter write = new BufferedWriter(new FileWriter(outFile))) {
-			write.write(data.toString());
-		} catch (Exception e) {
-			e.printStackTrace();
+	public void saveToFile(String filename) throws IOException {
+		String str = Array2DtoString(data);
+		
+		File file = new File(filename);
+		if (!file.exists()) {
+			file.createNewFile();
 		}
+
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write(str);
+		bw.close();
 	}
 	
 	
