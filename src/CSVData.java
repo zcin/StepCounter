@@ -27,7 +27,7 @@ public class CSVData {
 				data[i][j] = val;
 			}
 		}
-		changeTimeStamp(startRow);
+		changeTimeStamp();
 	}
 
 	private static String readFileAsString(String filepath) {
@@ -94,9 +94,9 @@ public class CSVData {
 	 * This method changes the time stamp of the data to make it start from 0.
 	 * @param linesToIgnore
 	 */
-	private void changeTimeStamp(int linesToIgnore) {
-		for (int i = data.length - 1; i > linesToIgnore; i--) {
-			if (i != linesToIgnore-1) {
+	private void changeTimeStamp() {
+		for (int i = data.length - 1; i >= 0; i--) {
+			if (i != 0) {
 				data[i][0] -= data[i-1][0];
 			}
 			else {

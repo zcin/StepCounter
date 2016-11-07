@@ -14,7 +14,6 @@ public class Plot {
 	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" }); 
 	
 	public static void main(String[] args) {
-		ChangeTime.changeTimeStamp(data, 1, filepath);
 		
 		double rate = 5;
 		int size = 100;
