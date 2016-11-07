@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JFrame;
@@ -6,11 +9,13 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "data/slow_walk9.txt";
-	static CSVData data = CSVData.readCSVFile(filepath, 5);
-	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" });
+	static String filepath = "data/male_stairs copy.txt";
+	static CSVData data = CSVData.readCSVFile(filepath, 0); 
+	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" }); 
 	
 	public static void main(String[] args) {
+		ChangeTime.changeTimeStamp(data, 1, filepath);
+		
 		double rate = 5;
 		int size = 100;
 		
@@ -37,7 +42,7 @@ public class Plot {
 		JFrame frame = new JFrame("Accelerometer Data");
 		frame.setSize(800, 600);
 		frame.setContentPane(plot);
-		frame.setVisible(true);
+		frame.setVisible(true);	
 	}
 	
 	public static double[] toArray(double d, int size){
@@ -107,4 +112,5 @@ public class Plot {
 			sample[i] = mean + Math.random()*(2*noiseAmount) - noiseAmount;
 		return sample;
 	}
+
 }

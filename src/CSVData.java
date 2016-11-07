@@ -27,6 +27,7 @@ public class CSVData {
 				data[i][j] = val;
 			}
 		}
+		changeTimeStamp(startRow);
 	}
 
 	private static String readFileAsString(String filepath) {
@@ -89,6 +90,26 @@ public class CSVData {
 		return new CSVData(lines, columnNames, numLinesIgnore);
 	}
 	
+	/***
+	 * This method changes the time stamp of the data to make it start from 0.
+	 * @param linesToIgnore
+	 */
+	private void changeTimeStamp(int linesToIgnore) {
+		for (int i = data.length - 1; i > linesToIgnore; i--) {
+			if (i != linesToIgnore-1) {
+				data[i][0] -= data[i-1][0];
+			}
+			else {
+				data[i][0] = 0;
+			}
+			
+		}
+	}
+	
+	/***
+	 * This method returns the object's CSV data.
+	 * @return the object's CSV data.
+	 */
 	public double[][] getData() {
 		return this.data;
 	}
@@ -272,7 +293,7 @@ public class CSVData {
 	 * @param filename
 	 *            the name of the file
 	 */
-	public void saveToFile(String filename) {
+	public static void saveToFile(String filename, CSVData data) {
 		File outFile = new File(filename);
 
 		try (BufferedWriter write = new BufferedWriter(new FileWriter(outFile))) {
