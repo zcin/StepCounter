@@ -19,7 +19,6 @@ public class CSVData {
 		this.data = new double[n][numColumns];
 		for (int i = 0; i < lines.length - startRow; i++) {
 			String line = lines[startRow + i];
-			System.out.println(line);
 			String[] coords = line.split(",");
 			for (int j = 0; j < numColumns; j++) {
 				if (coords[j].endsWith("#")) {
