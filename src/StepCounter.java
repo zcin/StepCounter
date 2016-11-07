@@ -6,7 +6,6 @@ public class StepCounter {
 	private double PEAK_HEIGHT_THRESHOLD;
 	private double NEAR_MISS_THRESHOLD;
 	private int NEAR_MISS_COUNT_THRESHOLD;
-	private double STARTING_THRESHOLD;
 	private double PEAK_TROUGH_DIFFERENCE_THRESHOLD;
 	private double STANDARD_DEVIATION;
 
@@ -16,9 +15,6 @@ public class StepCounter {
 	private double[] peaksAndTroughs;
 	private int numberSteps;
 
-	private static double[] peakTimes;
-	private static double[] peakMagnitudes;
-
 	public StepCounter(double[] times, double[][] sensorData, int numberSteps) {
 		this.times = times;
 		this.sensorData = sensorData;
@@ -26,7 +22,6 @@ public class StepCounter {
 
 		this.magnitudes = calculateMagnitudesFor(sensorData);
 		this.STANDARD_DEVIATION = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
-		this.STARTING_THRESHOLD = STANDARD_DEVIATION + calculateMean(magnitudes);
 		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.7 * STANDARD_DEVIATION + 2;
 		this.NEAR_MISS_COUNT_THRESHOLD = (int) ((1.0 / 10.0) * ((double) numberSteps));
 		this.NEAR_MISS_THRESHOLD = (0.4) * STANDARD_DEVIATION;
@@ -43,28 +38,23 @@ public class StepCounter {
 	public int countStepsByThresholdCrossings() {
 		int stepCount = 0;
 		boolean ifCrossed = false;
-		boolean differenceBigEnough = false;
-		for (int i = 1; i < magnitudes.length - 1; i++)
+		for (int i = 1; i < magnitudes.length - 1; i++){
 			if (magnitudes[i - 1] < PEAK_HEIGHT_THRESHOLD && magnitudes[i] > PEAK_HEIGHT_THRESHOLD) {
 				if (ifCrossed)
 					stepCount++;
 				else
 					ifCrossed = true;
 			}
+		}
 		return stepCount;
 	}
 
 	/***
-	 * Counts the number of steps based on threshold crossings and peak trough
-	 * threshold
-	 * 
-	 * @return the number of steps based on threshold crossings and peak trough
-	 *         threshold
+	 * Counts the number of steps based on threshold crossings and peak trough threshold
+	 * @return the number of steps based on threshold crossings and peak trough threshold
 	 */
 	public int countStepsByPeakTroughThreshold() {
 		int stepCount = 0;
-		boolean ifCrossed = false;
-		boolean differenceBigEnough = false;
 		for (int i = 1; i < magnitudes.length - 1; i++)
 			if (magnitudes[i] > PEAK_HEIGHT_THRESHOLD && peaksAndTroughs[i] > PEAK_TROUGH_DIFFERENCE_THRESHOLD)
 				stepCount++;
@@ -74,7 +64,6 @@ public class StepCounter {
 	/***
 	 * Returns an array that, for every peak, stores the difference between the
 	 * previous trough and the current peak.
-	 * 
 	 * @return an array that, for every peak, stores the difference between the
 	 *         previous trough and the current peak.
 	 */
@@ -87,13 +76,9 @@ public class StepCounter {
 	}
 
 	/***
-	 * Finds the difference between the previous trough and the current peak
-	 * magnitude.
-	 * 
-	 * @param index
-	 *            - The index of the current peak
-	 * @return the difference between the previous trough and the current peak
-	 *         magnitude.
+	 * Finds the difference between the previous trough and the current peak magnitude.
+	 * @param index - The index of the current peak
+	 * @return the difference between the previous trough and the current peak magnitude.
 	 */
 	public double getTroughToPeakDifference(int index) {
 		for (int i = index; i > 0; i--)
@@ -104,18 +89,10 @@ public class StepCounter {
 
 	/***
 	 * Returns threshold
+	 * @return current threshold
 	 */
 	public double getThreshold() {
 		return PEAK_HEIGHT_THRESHOLD;
-	}
-
-	/***
-	 * Returns the original threshold.
-	 * 
-	 * @return the original threshold.
-	 */
-	public double getOriginalThreshold() {
-		return STANDARD_DEVIATION + calculateMean(magnitudes);
 	}
 
 	/***
@@ -123,7 +100,7 @@ public class StepCounter {
 	 * calculateThreshold method.
 	 */
 	public void resetThreshold() {
-		double currentThreshold = STARTING_THRESHOLD;
+		double currentThreshold = STANDARD_DEVIATION + calculateMean(magnitudes);;
 		double newThreshold = currentThreshold;
 		do {
 			currentThreshold = newThreshold;
@@ -218,10 +195,10 @@ public class StepCounter {
 
 	/***
 	 * Returns a String containing important information about the data array.
+	 * @return output string
 	 */
 	public String toString() {
-		return ("starting threshold: " + STARTING_THRESHOLD + '\n')
-				+ ("peak height threshold: " + PEAK_HEIGHT_THRESHOLD + '\n')
+		return ("peak height threshold: " + PEAK_HEIGHT_THRESHOLD + '\n')
 				+ ("near miss threshold: " + NEAR_MISS_THRESHOLD + '\n')
 				+ ("near miss count threshold: " + NEAR_MISS_COUNT_THRESHOLD + '\n')
 				+ ("peak trough difference threshold: " + PEAK_TROUGH_DIFFERENCE_THRESHOLD + '\n')

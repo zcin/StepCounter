@@ -24,7 +24,6 @@ public class Plot {
 		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(accelerometerData);
 		
 		StepCounter stepcounter = new StepCounter(data.getColumn(0), accelerometerData, 30);
-		double beginningThreshold = stepcounter.getOriginalThreshold();
 		double threshold = stepcounter.getThreshold();
 		double mean = stepcounter.getMean();
 		System.out.println("steps1:" + stepcounter.countStepsByThresholdCrossings());
@@ -35,7 +34,6 @@ public class Plot {
 		Plot2DPanel plot = new Plot2DPanel();
 		plot.addLinePlot("Accel", accMagnitudes);
 		plot.addLinePlot("threshold", toArray(threshold, accMagnitudes.length));
-		//plot.addLinePlot("beginning threshold", toArray(beginningThreshold, accMagnitudes.length));
 		plot.addLinePlot("mean", toArray(mean, accMagnitudes.length));
 		
 		JFrame frame = new JFrame("Accelerometer Data");
