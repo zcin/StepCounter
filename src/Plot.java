@@ -44,6 +44,12 @@ public class Plot {
 		frame.setVisible(true);	
 	}
 	
+	/***
+	 * Returns a double array with the input saved in every element of the array
+	 * @param d - the input value
+	 * @param size - the size of the array
+	 * @return a double array
+	 */
 	public static double[] toArray(double d, int size){
 		double[] arr = new double[size];
 		for(int i = 0; i < size; i++) arr[i] = d;

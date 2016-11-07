@@ -32,6 +32,12 @@ public class CSVData {
 		changeTimeStamp();
 	}
 
+	
+	/***
+	 * Reads file at filepath and returns a string output
+	 * @param filepath - the file input
+	 * @return a string output
+	 */
 	private static String readFileAsString(String filepath) {
 		StringBuilder output = new StringBuilder();
 		try (Scanner scanner = new Scanner(new File(filepath))) {
@@ -287,12 +293,24 @@ public class CSVData {
 		return columnNames;
 	}
 	
+	/***
+	 * Returns the index of the input String in the input array
+	 * @param arr - the array that is used to check the index of the input n
+	 * @param n - the String that is searched for
+	 * @return the index of the input String in the input array
+	 */
 	public int indexOf(String[] arr, String n){
 		for(int i = 0; i < arr.length; i++)
 			if(arr[i].equals(n)) return i;
 		return -1;
 	}
 	
+	
+	/***
+	 * Converts a 2D array to a String
+	 * @param arr - the array that is converted into a String
+	 * @return a string that is converted from a 2D array
+	 */
 	public String Array2DtoString(double[][] arr) {
 		String str = Array1DtoString(columnNames);
 		for (int i = 1; i < arr.length; i++) {
@@ -301,6 +319,12 @@ public class CSVData {
 		return str;
 	}
 	
+	
+	/***
+	 * Converts a 1D double array to a String
+	 * @param arr - the array that is converted into a String
+	 * @return a string that is converted from a 1D array
+	 */
 	public String Array1DtoString(double[] arr) {
 		String str = "" + arr[0];
 		for (int i = 1; i < arr.length; i++) {
@@ -309,6 +333,11 @@ public class CSVData {
 		return str;
 	}
 	
+	/***
+	 * Converts a 1D String array to a String
+	 * @param arr - the array that is converted into a String
+	 * @return a string that is converted from a 1D array
+	 */
 	public String Array1DtoString(String[] arr) {
 		String str = "" + arr[0];
 		for (int i = 1; i < arr.length; i++) {
