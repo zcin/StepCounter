@@ -246,6 +246,18 @@ public class CSVData {
 			colIndexes[i] = indexOf(columnNames, colNames[i]);
 		return getColumns(colIndexes);
 	}
+	
+	public double[][] getAccelColumns(){
+		int[] indexes = new int[3];
+		for(int i = 0; i < columnNames.length; i++){
+			if(columnNames[i].toLowerCase().contains("accel")){
+				if(columnNames[i].toLowerCase().contains("x")) indexes[0] = i;
+				else if(columnNames[i].toLowerCase().contains("y")) indexes[1] = i;
+				else if(columnNames[i].toLowerCase().contains("z")) indexes[2] = i;
+			}
+		}
+		return getColumns(indexes);
+	}
 
 	/***
 	 * sets the value of the the element in the array

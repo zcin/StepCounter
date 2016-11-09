@@ -9,9 +9,9 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "data/female_stairs.csv";
+	static String filepath = "testData/Shivani/Male14StepWalkWithStair.csv";
 	static CSVData data = CSVData.readCSVFile(filepath, 0); 
-	static double[][] accelerometerData = data.getColumns(new String[] { "accelerometer-x", "accelerometer-y", "accelerometer-z" }); 
+	static double[][] accelerometerData = data.getAccelColumns(); 
 	
 	public static void main(String[] args) {
 		double[] accMagnitudes = StepCounter.calculateMagnitudesFor(accelerometerData);
