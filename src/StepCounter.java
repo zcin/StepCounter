@@ -39,11 +39,12 @@ public class StepCounter {
 		int stepCount = 0;
 		boolean ifCrossed = false;
 		for (int i = 1; i < magnitudes.length - 1; i++){
-			if (magnitudes[i - 1] < PEAK_HEIGHT_THRESHOLD && magnitudes[i] > PEAK_HEIGHT_THRESHOLD) {
-				if (ifCrossed)
+			if (magnitudes[i - 1] < PEAK_HEIGHT_THRESHOLD && magnitudes[i] > PEAK_HEIGHT_THRESHOLD ||
+					magnitudes[i - 1] > PEAK_HEIGHT_THRESHOLD && magnitudes[i] < PEAK_HEIGHT_THRESHOLD) {
+				if (ifCrossed) {
 					stepCount++;
-				else
-					ifCrossed = true;
+					ifCrossed = false;
+				} else ifCrossed = true;
 			}
 		}
 		return stepCount;
