@@ -1,0 +1,135 @@
+-filename:50StepWalkMale.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:comfortable_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+-filename:14StepWalkStairComboMale.csv
+-steps:14
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:mixed_stairs
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+-note:5 step walk, 2 steps up, 2 steps down, 5 step walk
+***********************************
+-filename:22StepRunMale.csv
+-steps:22
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:jog
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+-filename:14StepWalkStairComboFemale.csv
+-steps:14
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:mixed_stairs
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/6/16
+-note:5 step walk, 2 steps up, 2 steps down, 5 step walk
+***********************************
+-filename:50StepWalkFemale.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:comfortable_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/4/16
+***********************************
+-filename:50StepWalkFemale(2).csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:comfortable_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/4/16
+***********************************
+-filename:35StepRunFemale.csv
+-steps:35
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:jog
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/6/16
+***********************************
+-filename:27StepStairMale.csv
+-steps:27
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:stairs
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+-filename:27StepStairFemale.csv
+-steps:27
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:stairs
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/4/16
+***********************************
+-filename:35StepSlowWalkMale.csv
+-steps:35
+-phone_model:iPhone 6 
+-subject_age:17
+-subject_gender:M
+-gait:slow_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+-filename:35StepSlowWalkFemale.csv
+-steps:35
+-phone_model:iPhone 6 
+-subject_age:16
+-subject_gender:F
+-gait:slow_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Jannick Mueller
+-date:11/4/16
+***********************************
+-filename:50StepWalkMale(2).csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:comfortable_walk
+-phone_location:right_side_pocket
+-data_log_freq:10
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+

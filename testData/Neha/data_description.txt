@@ -1,0 +1,289 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li720\sl276\slmult1\partightenfactor0
+
+\f0\fs18 \cf0 \expnd0\expndtw0\kerning0
+- filename: Comfortable_Walking_Trial_One.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 51
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: comfortable_walk
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16
+\f1\fs22 \
+
+\f0\fs18 ***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Comfortable_Walking_Trial_Two.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 51
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: comfortable_walk
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16
+\f1\fs22 \
+
+\f0\fs18 ***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Comfortable_Walking_Trial_Three.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 50
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: comfortable_walk
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li720\sl276\slmult1\partightenfactor0
+\cf0 ***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Slow_Walking.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 50
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: slow_walk
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Fast_Walking.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 50
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: fast_walk
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Jogging.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 51
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: jog
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Sprinting.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 53
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: sprint
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Climbing_Stairs.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 50
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: stairs
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16\
+***********************************
+\f1\fs22 \
+
+\f0\fs18 - filename: Free_Condition.csv
+\f1\fs22 \
+
+\f0\fs18 - steps: 50
+\f1\fs22 \
+
+\f0\fs18 - phone_model: iPhone 6
+\f1\fs22 \
+
+\f0\fs18 - subject_age: 16
+\f1\fs22 \
+
+\f0\fs18 - subject_gender: F
+\f1\fs22 \
+
+\f0\fs18 - gait: no_instructions
+\f1\fs22 \
+
+\f0\fs18 - phone_location: right_ankle
+\f1\fs22 \
+
+\f0\fs18 - data_log_freq: 100
+\f1\fs22 \
+
+\f0\fs18 - collection_supervisor: Neha and Arunima
+\f1\fs22 \
+
+\f0\fs18 - date: 11/4/16}

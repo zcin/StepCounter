@@ -1,0 +1,141 @@
+- filename: erin regular walking.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: comfortable-walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_30_erin running.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: jog
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_29_4wlerin speed walk.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: fast-walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_33erin stairs.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: stairs
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: maya regular walking .csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 17
+- subject_gender: F
+- gait: comfortable_walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_50_50maya speed walk.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 17
+- subject_gender: F
+- gait: fast_walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_52_36maya running.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 17
+- subject_gender: F
+- gait: jog
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_49_32maya stairs.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 17
+- subject_gender: F
+- gait: stairs
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: anika regular walking .csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: comfortable_walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_39_08anika speed walking.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: fast_walk
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_41_51anika stairs.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: stairs
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+***********************************
+- filename: 20161105_15_39_57anika running.csv
+- steps: 40
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: jog
+- phone_location: dominant_ankle
+- data_log_freq: 100
+- collection_supervisor: Anika
+- date: 11/5/16
+
+
+
+
+
+
+
+
+
+

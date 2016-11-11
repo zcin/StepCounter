@@ -1,0 +1,32 @@
+- filename: jogging_slow_40.csv
+- steps: 40
+- phone_model: Motorola Moto X Pure Edition
+- subject_age: 16
+- subject_gender: M
+- gait: jog
+- phone_location: right_side_pocket
+- data_log_freq: 20
+- collection_supervisor: Yuval Hermelin
+- date: 11/6/16
+***********************************
+- filename: skipping_slow_26.csv
+- steps: 26
+- phone_model: Motorola Moto X Pure Edition
+- subject_age: 16
+- subject_gender: M
+- gait: no_instructions
+- phone_location: right_side_pocket
+- data_log_freq: 20
+- collection_supervisor: Yuval Hermelin
+- date: 11/6/16
+***********************************
+- filename: walking_normalpace_40.csv
+- steps: 40
+- phone_model: Motorola Moto X Pure Edition
+- subject_age: 16
+- subject_gender: M
+- gait: comfortable_walk
+- phone_location: right_side_pocket
+- data_log_freq: 20
+- collection_supervisor: Yuval Hermelin
+- date: 11/6/16

@@ -1,0 +1,135 @@
+-filename:Male50StepWalk.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:medium-walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Male14StepWalkWithStair.csv
+-steps:14
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:mixed_stairs
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+-note:5 step walk, 2 steps up stairs, 2 steps down stairs, 5 step walk
+***********************************
+-filename:Male22StepRun.csv
+-steps:22
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:jog
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Female14StepWalkWithStair.csv
+-steps:14
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:mixed_stairs
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/6/16
+-note:5 step walk, 2 steps up stairs, 2 steps down stairs, 5 step walk
+***********************************
+-filename:Female50StepWalk.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:medium-walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Female50StepWalkTrial2.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:medium-walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Female35StepRun.csv
+-steps:35
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:jog
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/6/16
+***********************************
+-filename:Male27StepStair.csv
+-steps:27
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:stairs
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Female27StepStair.csv
+-steps:27
+-phone_model:iPhone 6 Plus
+-subject_age:16
+-subject_gender:F
+-gait:stairs
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Male35StepSlowWalk.csv
+-steps:35
+-phone_model:iPhone 6 
+-subject_age:17
+-subject_gender:M
+-gait:slow_walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Female35StepSlowWalk.csv
+-steps:35
+-phone_model:iPhone 6 
+-subject_age:16
+-subject_gender:F
+-gait:slow_walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shivani Ghanta
+-date:11/4/16
+***********************************
+-filename:Male50StepWalkTrial2.csv
+-steps:50
+-phone_model:iPhone 6 Plus
+-subject_age:17
+-subject_gender:M
+-gait:comfortable_walk
+-phone_location:right_side_pocket
+-data_log_freq:100
+-collection_supervisor:Shaina Chen
+-date:11/4/16
+***********************************
+

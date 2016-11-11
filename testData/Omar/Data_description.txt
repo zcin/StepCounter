@@ -1,0 +1,55 @@
+- filename: Med_Walk.csv
+- steps: 20
+- phone_model: samsung galaxy s4 mini
+- subject_age: 16
+- subject_gender: M
+- gait: comfortable_walk
+- phone_location: right_side_pocket         
+- data_log_freq: 20
+- collection_supervisor: Rohan Walia
+- date: 6/1/16
+***************************************************
+- filename: Slow_Walk.csv
+- steps: 20
+- phone_model: samsung galaxy s4 mini
+- subject_age: 16
+- subject_gender: M
+- gait: slow_walk
+- phone_location: right_side_pocket         
+- data_log_freq: 20
+- collection_supervisor: Rohan Walia
+- date: 6/1/16
+***************************************************
+- filename: Fast_Walk.csv
+- steps: 20
+- phone_model: samsung galaxy s4 mini
+- subject_age: 16
+- subject_gender: M
+- gait: fast_walk
+- phone_location: right_side_pocket         
+- data_log_freq: 20
+- collection_supervisor: Rohan Walia
+- date: 6/1/16
+***************************************************
+- filename: Jog.csv
+- steps: 20
+- phone_model: samsung galaxy s4 mini
+- subject_age: 16
+- subject_gender: M
+- gait: jog
+- phone_location: right_side_pocket         
+- data_log_freq: 20
+- collection_supervisor: Rohan Walia
+- date: 6/1/16
+***************************************************
+- filename: Sprint.csv
+- steps: 20
+- phone_model: samsung galaxy s4 mini
+- subject_age: 16
+- subject_gender: M
+- gait: Sprint
+- phone_location: right_side_pocket         
+- data_log_freq: 20
+- collection_supervisor: Rohan Walia
+- date: 6/1/16
+***************************************************

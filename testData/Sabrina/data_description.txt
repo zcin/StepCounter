@@ -1,0 +1,55 @@
+- filename: 10StepJogging.csv
+- steps: 10
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: jog
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Sabrina Chi
+- date:11/5/16
+***********************************
+- filename: 15StepWalking.csv
+- steps: 15
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: comfortable_walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Sabrina Chi
+- date: 11/5/16
+***********************************
+- filename: 24StepIrregularWalking.csv
+- steps: 24
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: mixed_walking
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Sabrina Chi
+- date: 11/5/16
+***********************************
+- filename: 13StepsUpAndDownStairs.csv
+- steps: 13
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: stairs
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Sabrina Chi
+- date: 11/6/16
+***********************************
+- filename: 32StepsUpAndDownHill.csv
+- steps: 32
+- phone_model: iPhone 6s
+- subject_age: 16
+- subject_gender: F
+- gait: comfortable_walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Sabrina Chi
+- date: 11/6/16
+- location: hill

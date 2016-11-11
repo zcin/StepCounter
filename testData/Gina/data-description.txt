@@ -1,0 +1,44 @@
+-filename: right thigh 32 
+-steps: 32
+-phone_model: iPhone 6 S
+-subject_age 16
+-subject_gender F
+-gait: normal walk
+-phone_location: right thigh
+-data_lof_freq: 100
+-collection_supervisor: Gina Le
+-date: 11/6/16
+**********************************************
+-filename: right thigh 32 trial 2 
+-steps: 32
+-phone_model: iPhone 6 S
+-subject_age 16
+-subject_gender F
+-gait: normal walk
+-phone_location: right thigh
+-data_lof_freq: 100
+-collection_supervisor: Gina Le
+-date: 11/6/16
+**********************************************
+-filename: right thigh 32 trial 3
+-steps: 32
+-phone_model: iPhone 6 S
+-subject_age 16
+-subject_gender F
+-gait: normal walk
+-phone_location: right thigh
+-data_lof_freq: 100
+-collection_supervisor: Gina Le
+-date: 11/6/16
+**********************************************
+-filename: right thigh 32 trial 4
+-steps: 32
+-phone_model: iPhone 6 S
+-subject_age 16
+-subject_gender F
+-gait: normal walk
+-phone_location: right thigh
+-data_lof_freq: 100
+-collection_supervisor: Gina Le
+-date: 11/6/16
+**********************************************

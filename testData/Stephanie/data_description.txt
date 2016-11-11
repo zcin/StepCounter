@@ -1,0 +1,65 @@
+- filename: p1_milling.csv
+- steps: 29.5
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: M
+- gait: no_instructions
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Stephanie
+- date: 11/2/16
+***********************************
+- filename: p1_running.csv
+- steps: 14
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: M
+- gait: sprint
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Stephanie
+- date: 11/2/16
+***********************************
+- filename: p1_walking.csv
+- steps: 22
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: M
+- gait: comfortable_walk
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Stephanie
+- date: 11/2/16
+***********************************
+- filename: p2_milling.csv
+- steps: 37.5
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: F
+- gait: no_instructions
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Avi
+- date: 11/2/16
+***********************************
+- filename: p2_running.csv
+- steps: 15
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: F
+- gait: sprint
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Avi
+- date: 11/2/16
+***********************************
+- filename: p2_walking.csv
+- steps: 27
+- phone_model: iPhone 6
+- subject_age: 15
+- subject_gender: F
+- gait: comfortable_walk
+- phone_location: dominant_ankle
+- data_log_freq: 20
+- collection_supervisor: Avi
+- date: 11/2/16

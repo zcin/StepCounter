@@ -1,0 +1,109 @@
+- filename: female_comfortable_walk.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 15
+- subject_gender: F
+- gait: comfortable walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Rohan
+- date: 11/4/16
+***********************************
+- filename: male_comfortable_walk.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 45
+- subject_gender: M
+- gait: comfortable_walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: female_fast_walk.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 47
+- subject_gender: F
+- gait: fast_walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: male_fast_walk.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 45
+- subject_gender: M
+- gait: fast walk
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: female_jog.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 16
+- subject_gender: F
+- gait: jog
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Rohan
+- date: 11/4/16
+***********************************
+- filename: male_jog.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 40
+- subject_gender: M
+- gait: jog
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: female_stairs.csv
+- steps: 16
+- phone_model: Nexus 6P
+- subject_age: 15
+- subject_gender: F
+- gait: stairs
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/4/16
+***********************************
+- filename: male_stairs.csv
+- steps: 16
+- phone_model: Nexus 6P
+- subject_age: 17
+- subject_gender: M
+- gait: stairs
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: female_no_instructions.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 47
+- subject_gender: F
+- gait: no_instructions
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16
+***********************************
+- filename: male_no_instructions.csv
+- steps: 30
+- phone_model: Nexus 6P
+- subject_age: 45
+- subject_gender: M
+- gait: no_instructions
+- phone_location: right_side_pocket
+- data_log_freq: 100
+- collection_supervisor: Cindy
+- date: 11/6/16

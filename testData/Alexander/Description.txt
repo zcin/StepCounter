@@ -1,0 +1,103 @@
+- filename: frontstationary.txt
+- steps: 0
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: none
+- phone_location: front_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: frontwalk.txt
+- steps: 60
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: walk
+- phone_location: front_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: frontrun.txt
+- steps: 25
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: run
+- phone_location: front_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: backstationary.txt
+- steps: 0
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: none
+- phone_location: back_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: backwalk.txt
+- steps: 60
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: walk
+- phone_location: back_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: backrun.txt
+- steps: 24
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: run
+- phone_location: back_right_pocket
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: anklestationary.txt
+- steps: 0
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: none
+- phone_location: ankle_shoe
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: anklewalk.txt
+- steps: 60
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: walk
+- phone_location: ankle_shoe
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+- filename: anklerun.txt
+- steps: 14
+- phone_model: samsung galaxy s4
+- subject_age: 16
+- subject_gender: M
+- gait: run
+- phone_location: ankle_shoe
+- data_log_freq: 100
+- collection_supervisor: Frank Wang
+- date: 11/2/16
+******************************************************
+
+
+
+
