@@ -9,7 +9,7 @@ import org.math.plot.Plot3DPanel;
 
 public class Plot {
 	
-	static String filepath = "testData/Shivani/Male14StepWalkWithStair.csv";
+	static String filepath = "data/female_comfortable_walk.csv";
 	static CSVData data = CSVData.readCSVFile(filepath, 0); 
 	static double[][] accelerometerData = data.getAccelColumns(); 
 	
@@ -20,7 +20,6 @@ public class Plot {
 		double threshold = stepcounter.getThreshold();
 		System.out.println("steps1:" + stepcounter.countStepsByThresholdCrossings());
 		System.out.println("steps2:" + stepcounter.countStepsByPeakTroughThreshold());
-		
 		
 		Plot2DPanel plot = new Plot2DPanel();
 		plot.addLinePlot("Accel", accMagnitudes);

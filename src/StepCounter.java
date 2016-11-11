@@ -24,7 +24,7 @@ public class StepCounter {
 		this.STANDARD_DEVIATION = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
 		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.7 * STANDARD_DEVIATION + 2;
 		this.NEAR_MISS_COUNT_THRESHOLD = (int) ((1.0 / 10.0) * ((double) numberSteps));
-		this.NEAR_MISS_THRESHOLD = (0.4) * STANDARD_DEVIATION;
+		this.NEAR_MISS_THRESHOLD = (0.31) * STANDARD_DEVIATION;
 
 		peaksAndTroughs = getPeaksAndTroughs();
 		resetThreshold();
@@ -159,7 +159,7 @@ public class StepCounter {
 	 * @return the Standard Deviation of the data array
 	 */
 	public static double calculateStandardDeviation(double[] arr, double mean) {
-		int sum = 0;
+		double sum = 0;
 		for (int i = 0; i < arr.length; i++)
 			sum += (arr[i] - mean) * (arr[i] - mean);
 		return Math.sqrt(sum / (arr.length - 1));
@@ -198,7 +198,7 @@ public class StepCounter {
 	 * @return output string
 	 */
 	public String toString() {
-		return ("peak height threshold: " + PEAK_HEIGHT_THRESHOLD + '\n')
+		return ("peak height threshold: " + (PEAK_HEIGHT_THRESHOLD - calculateMean(magnitudes)) + '\n')
 				+ ("near miss threshold: " + NEAR_MISS_THRESHOLD + '\n')
 				+ ("near miss count threshold: " + NEAR_MISS_COUNT_THRESHOLD + '\n')
 				+ ("peak trough difference threshold: " + PEAK_TROUGH_DIFFERENCE_THRESHOLD + '\n')

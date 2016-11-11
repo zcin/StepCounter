@@ -104,16 +104,11 @@ public class CSVData {
 	 */
 	private void changeTimeStamp() {
 		double value = data[0][0];
+		if (value == 0) return;
 
 		data[0][0] = 0;
 		for (int i = 1; i < data.length; i++) {
 			data[i][0] -= value;
-		}
-		
-		try {
-			saveToFile(filePathToCSV);
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 	
