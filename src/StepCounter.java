@@ -22,10 +22,15 @@ public class StepCounter {
 
 		this.magnitudes = calculateMagnitudesFor(sensorData);
 		this.STANDARD_DEVIATION = calculateStandardDeviation(magnitudes, calculateMean(magnitudes));
-		this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.7 * STANDARD_DEVIATION + 2;
+		
+		if(STANDARD_DEVIATION > 1.7) this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 0.5 * STANDARD_DEVIATION + 1.5;
+		else if(STANDARD_DEVIATION < 1.7) this.PEAK_TROUGH_DIFFERENCE_THRESHOLD = 1.2 * STANDARD_DEVIATION + 0.1;
+		
+		if(STANDARD_DEVIATION > 2.5) this.NEAR_MISS_THRESHOLD = .6*STANDARD_DEVIATION - 1.0;
+		else if(STANDARD_DEVIATION < 2.5) this.NEAR_MISS_THRESHOLD = .0337*STANDARD_DEVIATION + 0.19;
+		
 		this.NEAR_MISS_COUNT_THRESHOLD = (int) ((1.0 / 10.0) * ((double) numberSteps));
-		this.NEAR_MISS_THRESHOLD = (0.31) * STANDARD_DEVIATION;
-
+		
 		peaksAndTroughs = getPeaksAndTroughs();
 		resetThreshold();
 	}
